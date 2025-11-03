@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym Cards with Hover Icons</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    .navbar {
+      background-color: #000;
+    }
+    .navbar-brand img {
+      height: 50px;
+    }
+    .navbar-nav .nav-link {
+      color: white !important;
+      font-weight: 500;
+    }
+    .navbar-nav .nav-link:hover {
+      color: #007bff !important;
+    }
+    .carousel-item img {
+      height: 500px;
+      object-fit: cover;
+      width: 100%;
+    }
+    .card {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    .social-icons {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      gap: 15px;
+      opacity: 0;
+      z-index: 2;
+      transition: opacity 0.3s ease;
+    }
+    .card:hover .social-icons {
+      opacity: 1;
+    }
+    .social-icons a {
+      color: white;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px;
+      border-radius: 50%;
+      font-size: 18px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .social-icons a:hover {
+      background-color: #007bff;
+      transform: scale(1.2);
+    }
+    .card img {
+      transition: opacity 0.3s ease;
+      z-index: 1;
+    }
+    .card:hover img {
+      opacity: 0.3;
+    }
+
+    body{
+           
+  background-image: url("images/logo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 60px; /* optional, agar page corners rounded chahiye */
+}
+
+    
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="Gym Logo">Gym</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about us.html">About us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+           <li class="nav-item"><a class="nav-link" href="#">Membership</a></li>
+           <li class="nav-item"><a class="nav-link" href="#">Fitness</a></li>
+           
+
+          <li class="nav-item"><a class="nav-link" href="contact us.html">Contact us</a></li>
+           <li class="nav-item"><a class="nav-link" href="feedback form.html">Feedback</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Slider Section -->
+  <div id="gymCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="images/1st.jpg" class="d-block w-100" alt="Slider 1">
+      </div>
+      <div class="carousel-item">
+        <img src="images/2nd.jpg" class="d-block w-100" alt="Slider 2">
+      </div>
+      <div class="carousel-item">
+        <img src="images/3rd.jpg" class="d-block w-100" alt="Slider 3">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#gymCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#gymCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <div class="container my-5">
+    <div class="row g-4">
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <img src="images/1st card.jpg" class="card-img-top" alt="Card 1">
+          <div class="social-icons">
+            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">Strength Training</h5>
+            <p class="card-text">Improve your strength and stamina with modern equipment and expert guidance.</p>
+            <a href="#" class="btn btn-primary">Get info</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <img src="images/2nd.jpg" class="card-img-top" alt="Card 2">
+          <div class="social-icons">
+            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">Cardio Zone</h5>
+            <p class="card-text">Boost your heart health with high-energy cardio exercises in our spacious area.</p>
+            <a href="#" class="btn btn-primary">Get info</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <img src="images/3rd.jpg" class="card-img-top" alt="Card 3">
+          <div class="social-icons">
+            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">Personal Training</h5>
+            <p class="card-text">Get personalized training sessions tailored to your goals and body type.</p>
+            <a href="#" class="btn btn-primary">Get info</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <img src="images/4th images.jpg" class="card-img-top" alt="Card 4">
+          <div class="social-icons">
+            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">Yoga Classes</h5>
+            <p class="card-text">Relax your body and mind with our calming and refreshing yoga sessions.</p>
+            <a href="#" class="btn btn-primary">Get info</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <img src="images/5th images.jpg" class="card-img-top" alt="Card 5">
+          <div class="social-icons">
+            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">Nutrition Plans</h5>
+            <p class="card-text">Get expert diet advice to complement your training and fitness goals.</p>
+            <a href="#" class="btn btn-primary">Get info</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="card">
+          <img src="images/6th images.jpg" class="card-img-top" alt="Card 6">
+          <div class="social-icons">
+            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title">Zumba Dance</h5>
+            <p class="card-text">Have fun while staying fit with energetic Zumba dance sessions every week.</p>
+            <a href="#" class="btn btn-primary">Get info</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <img src="images/pexels-ivan-samkov-4162449.jpg" 
+     alt="Home Background"
+     style="width: 100%; height: 100vh; object-fit: cover;">
+
+     <div>
+      <div>
+        
+      </div>
+      <img src="images/7th images.jfif" alt="Home Background"
+      style="width: 100%; height: 100vh; object-fit: cover;" >
+     </div>
+
+    
+    
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

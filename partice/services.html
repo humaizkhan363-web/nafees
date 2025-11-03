@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Services - FitZone Gym</title>
+
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --accent: #1f7a8c;
+      --text: #222;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    .site-header {
+      background: var(--card);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+    }
+
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+    }
+
+    .logo {
+      margin: 0;
+      font-size: 1.25rem;
+      color: var(--accent);
+    }
+
+    .nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .hero {
+      padding: 2.5rem 0;
+      text-align: center;
+    }
+
+    .hero .lead {
+      color: #444;
+      margin-top: 0.25rem;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      padding-bottom: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--card);
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(31, 122, 140, 0.06);
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .service-card h3 {
+      margin: 0 0 0.5rem 0;
+    }
+
+    .service-card p {
+      margin: 0;
+      color: #555;
+    }
+
+    .plans {
+      background: transparent;
+      padding: 1rem 0;
+    }
+
+    .plan-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .contact {
+      padding: 1rem 0;
+    }
+
+    .site-footer {
+      padding: 1rem 0;
+      background: transparent;
+      text-align: center;
+      color: #666;
+    }
+
+    @media (max-width: 600px) {
+      .site-header .container {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .nav a {
+        margin-left: 0;
+        margin-right: 0.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h2>Our Services</h2>
+        <p class="lead">Simple, effective, and result-driven fitness solutions for everyone.</p>
+      </div>
+    </section>
+
+    <section id="services" class="services container">
+      <article class="service-card">
+        <h3>Personal Training</h3>
+        <p>One-on-one guidance, personalized plans, and form supervision.</p>
+      </article>
+
+      <article class="service-card">
+        <h3>Group Classes</h3>
+        <p>Yoga, Zumba, HIIT, and various group sessions throughout the week.</p>
+      </article>
+
+      <article class="service-card">
+        <h3>Cardio Area</h3>
+        <p>Equipped with treadmills, stationary bikes, and rowing machines.</p>
+      </article>
+
+      <article class="service-card">
+        <h3>Strength Training</h3>
+        <p>Free weights, machines, and structured strength programs.</p>
+      </article>
+
+      <article class="service-card">
+        <h3>Nutrition Advice</h3>
+        <p>Personalized diet guidance to complement your fitness goals.</p>
+      </article>
+
+      <article class="service-card">
+        <h3>Membership Plans</h3>
+        <p>Monthly, quarterly, and yearly plans with flexible payment options.</p>
+      </article>
+    </section>
+
+    <section id="plans" class="plans container">
+      <h3>Membership Plans</h3>
+      <ul class="plan-list">
+        <li>Basic – Gym access only (Monthly)</li>
+        <li>Plus – Gym + Group Classes (Quarterly)</li>
+        <li>Premium – Training + Nutrition Consultation (Yearly)</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="contact container">
+      <h3>Contact Us</h3>
+      <p>Phone: 0300-1234567 | Email: info@fitzone.example</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 FitZone Gym — All Rights Reserved</p>
+    </div>
+  </footer>
+</body>
+</html>

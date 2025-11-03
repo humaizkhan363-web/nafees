@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym Admission Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container-box {
+      max-width: 1200px;
+      margin: 50px auto;
+      display: flex;
+      gap: 20px;
+    }
+    .form-box {
+      flex: 1;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin: 10px 0 5px;
+    }
+    input, select, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: #007BFF;
+      outline: none;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    button {
+      background: #007BFF;
+      color: #fff;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .note {
+      text-align: center;
+      font-size: 13px;
+      color: gray;
+    }
+    .map-box {
+      flex: 1;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    footer {
+      background-color: #212529;
+      color: #fff;
+      padding: 40px 20px;
+    }
+    footer a {
+      color: #fff;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* ✅ Fixed Subscribe Box */
+    .subscribe-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .subscribe-box input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      font-size: 16px;
+    }
+
+    .subscribe-box input::placeholder {
+      color: #888;
+      opacity: 1;
+    }
+
+    .subscribe-box button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .subscribe-box button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-box">
+    <div class="form-box">
+      <h2>Gym Admission Form</h2>
+      <form action="backend.php" method="post" onsubmit="showMessage(event)">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" min="15" max="70" required>
+
+        <label>Gender</label>
+        <select name="gender" required>
+          <option value="">Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+
+        <label for="phone">Contact Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="03xx-xxxxxxx" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="membership">Select Membership Plan</label>
+        <select id="membership" name="membership" required>
+          <option value="">Choose Plan</option>
+          <option value="monthly">Monthly</option>
+          <option value="3-months">3 Months</option>
+          <option value="6-months">6 Months</option>
+          <option value="yearly">Yearly</option>
+        </select>
+
+        <label for="goal">Fitness Goal</label>
+        <select id="goal" name="goal" required>
+          <option value="">Select Goal</option>
+          <option value="weight-loss">Weight Loss</option>
+          <option value="muscle-gain">Muscle Gain</option>
+          <option value="fitness">General Fitness</option>
+          <option value="strength">Strength Training</option>
+        </select>
+
+        <label for="timing">Preferred Timing</label>
+        <select id="timing" name="timing" required>
+          <option value="">Select Time</option>
+          <option value="morning">Morning (6am - 10am)</option>
+          <option value="afternoon">Afternoon (12pm - 4pm)</option>
+          <option value="evening">Evening (6pm - 10pm)</option>
+        </select>
+
+        <label for="message">Additional Notes</label>
+        <textarea id="message" name="message" placeholder="Any medical condition or special request?"></textarea>
+
+        <label for="photo">Upload Your Photo</label>
+        <input type="file" id="photo" name="photo">
+
+        <button type="submit">Submit Admission</button>
+      </form>
+      <p class="note">Our team will contact you after reviewing your admission request.</p>
+    </div>
+
+    <div class="map-box">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115755.78270735624!2d66.84566259726559!3d24.953584099999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb36b00276ba845%3A0x45c28f2b67bcf1fe!2sAK%20FITNESS%20GYM!5e0!3m2!1sen!2s!4v1761646557601!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+
+  <script>
+    function showMessage(event) {
+      event.preventDefault();
+      alert("Your Gym Admission Form has been submitted successfully!");
+    }
+  </script>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>About Us</h5>
+          <p>Our gym provides top-quality equipment, expert trainers, and a motivating environment to help you reach your fitness goals.</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about us.html">About us</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="">Fitness</a></li>
+            <li><a href="contact us.html">Contact Us</a></li>
+            <li><a href="">Membership Plans</a></li>
+            <li><a href="feedback form.html">Feedback</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Subscribe to our Newsletter</h5>
+          <div class="subscribe-box">
+            <input type="email" placeholder="Enter your email">
+            <button type="submit">Submit</button>
+          </div>
+        </div>
+      </div>
+      <div class="mt-3">
+        <a href="https://www.facebook.com/" class="text-white me-3 fs-5"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/" class="text-white me-3 fs-5"><i class="bi bi-instagram"></i></a>
+        <a href="https://x.com/" class="text-white me-3 fs-5"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://youtube.com/" class="text-white fs-5"><i class="bi bi-youtube"></i></a>
+      </div>
+      <hr class="bg-light">
+      <div class="text-center">
+        <p class="mb-0">© 2025 GymZone. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
